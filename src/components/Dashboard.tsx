@@ -8,13 +8,13 @@ import TankInfo from "./TankInfo"
 import EquipmentList from "./EquipmentList"
 import TotalCost from "./TotalCost"
 import Sidebar from "./Sidebar"
-import { calculateTotalCost, updateDynamicCapacities } from "../utils/calculations"
+import {updateDynamicCapacities } from "../utils/calculations"
 import { TankData as BiologicalTankData } from "../types/BiologicalTankData"
 import * as TankCalculation from "../utils/BiologicalTankCalculation"
 import { TankData as ChemicalTankData } from "../types/ChemicalTankData"
 import * as ChemicalTankCalculation from "../utils/ChemicalTankCalculation"
 import { PlantData } from "../types/PlantData"
-import equipmentInitialState from "../data/equipmentInitialState"
+import equipmentInitialState from '../data/equipmentInitialState'
 
 interface Equipment {
   id: string
@@ -71,15 +71,15 @@ const Dashboard = () => {
     UFWaterTank: 0,
     SludgeHoldingTank: 0,
     volume: 0,
-    length: 3,  // Will be constant 3
-    height: 3,  // Will be constant 3
+    length: 3,
+    height: 3,
     breath: {
       barScreen: 0,
       oilGrease: 0,
       equalization: 0,
-      PHNeutralization: 0,
-      Coagulants: 0,
-      Flocculant: 0,
+      phNeutralization: 0,
+      coagulants: 0,
+      flocculant: 0,
       tubeSettle1: 0,
       anoxic: 0,
       mbbr: 0,
@@ -104,20 +104,20 @@ const Dashboard = () => {
     UFWaterTank: 0,
     SludgeHoldingTank: 0,
     volume: 0,
-    length: 3,  // Will be constant 3
-    height: 3,  // Will be constant 3
+    length: 3,
+    height: 3,
     breath: {
-        barScreen: 0,
-        oilGrease: 0,
-        equalization: 0,
-        PHNeutralizationTank: 0,
-        CoagulantsTank: 0,
-        FlocculantTank: 0,
-        tubeSettle: 0,
-        filterFeed: 0,
-        treatedWater: 0,
-        uf: 0,
-        sludge: 0,
+      barScreen: 0,
+      oilGrease: 0,
+      equalization: 0,
+      phNeutralization: 0,
+      coagulants: 0,
+      flocculant: 0,
+      tubeSettle: 0,
+      filterFeed: 0,
+      treatedWater: 0,
+      uf: 0,
+      sludge: 0,
     },
   })
   const [equipmentData, setEquipmentData] = useState<Record<string, Equipment>>(equipmentInitialState)
@@ -287,16 +287,16 @@ const Dashboard = () => {
   const resetDashboard = () => {
     // Reset to initial states
     setPlantData({
-      type: 'ETP',
+      type: 'ETP', // Add missing required type field
       industry: "",
       capacity: 0,
+      PeakFlow: 0,
       BOD: 0,
       COD: 0,
       TSS: 0,
       pH: 0,
       OilGrease: 0,
       Nitrogen: 0,
-      PeakFlow: 0,
     });
     // Reset equipment data to clean initial state
     const cleanEquipmentData = Object.entries(equipmentData).reduce<Record<string, any>>((acc, [key, item]: [string, any]) => {

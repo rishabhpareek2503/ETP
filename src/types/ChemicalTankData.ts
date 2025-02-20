@@ -1,11 +1,12 @@
 export interface TankData {
-    type: string;
+    type: "ETP" | "STP";
     BarScreen: number;
     OilGreaseTank: number;
     EqualizationTank: number;
     PHNeutralizationTank: number;
     CoagulantsTank: number;
     FlocculantTank: number;
+    TubeSettle: number;
     FilterFeedTank: number;
     TreatedWaterTank: number;
     UFWaterTank: number;
@@ -17,9 +18,9 @@ export interface TankData {
         barScreen: number;
         oilGrease: number;
         equalization: number;
-        PHNeutralizationTank: number;
-        CoagulantsTank: number;
-        FlocculantTank: number;
+        phNeutralization: number;
+        coagulants: number;
+        flocculant: number;
         tubeSettle: number;
         filterFeed: number;
         treatedWater: number;

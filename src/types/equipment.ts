@@ -1,4 +1,6 @@
 export interface EquipmentData {
+    id: string
+    basePrice: number
     name: string
     capacity?: number
     diameter?: number
@@ -11,6 +13,7 @@ export interface EquipmentData {
     costPerPiece: number
     costPerFlow: number
     totalPrice: number
+    type: string
   }
   
   
