@@ -6,7 +6,10 @@ export interface TankData {
     PHNeutralizationTank: number;
     CoagulantsTank: number;
     FlocculantTank: number;
-    TubeSettle: number;
+    TubeSettle1: number;
+    AnoxicTank: number;
+    MBBRTank: number;
+    TubeSettle2: number;
     FilterFeedTank: number;
     TreatedWaterTank: number;
     UFWaterTank: number;
@@ -21,7 +24,10 @@ export interface TankData {
         phNeutralization: number;
         coagulants: number;
         flocculant: number;
-        tubeSettle: number;
+        tubeSettle1: number;
+        tubeSettle2: number;
+        anoxic: number;
+        mbbr: number;
         filterFeed: number;
         treatedWater: number;
         uf: number;

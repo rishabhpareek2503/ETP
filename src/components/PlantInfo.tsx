@@ -244,7 +244,7 @@ const PlantInfo: React.FC<PlantInfoProps> = ({ plantData, onDataChange }) => {
   const handleIndustryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = e.target.value;
     setSelectedIndustry(selectedValue);
-    onDataChange("Industry", selectedValue);
+    onDataChange("industry", selectedValue);
   };
 
   const handleChemicalChange = (chemical: string, value: number) => {
@@ -606,7 +606,7 @@ const PlantInfo: React.FC<PlantInfoProps> = ({ plantData, onDataChange }) => {
           Industry
         </label>
         <select
-          name="Industry"
+          name="industry"
           value={selectedIndustry || ""}
           onChange={handleIndustryChange}
           className="block w-full p-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"

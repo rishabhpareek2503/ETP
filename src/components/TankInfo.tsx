@@ -38,7 +38,7 @@ const chemicalTanks: { name: string; key: keyof ChemicalTankData }[] = [
   { name: "PH Neutralization Tank", key: "PHNeutralizationTank" },
   { name: "Coagulants Tank", key: "CoagulantsTank" },
   { name: "Flocculant Tank", key: "FlocculantTank" },
-  { name: "Tube Settle", key: "TubeSettle" },
+  { name: "Tube Settle 1", key: "TubeSettle1" },
   { name: "Filter Feed Tank", key: "FilterFeedTank" },
   { name: "Treated Water Tank", key: "TreatedWaterTank" },
   { name: "UF Water Tank", key: "UFWaterTank" },
@@ -64,7 +64,9 @@ const TankInfo = ({ treatmentType, tankData }: TankInfoProps) => {
       <h2 className="text-2xl font-bold text-gray-900 mb-4">{treatmentType} Tank Details</h2>
       
       {tanks.map(({ name, key }) => {
-        const volume = (tankData as BiologicalTankData | ChemicalTankData)[key] || 0;
+        const volume = treatmentType === "Biological" 
+          ? (tankData as BiologicalTankData)[key] 
+          : (tankData as ChemicalTankData)[key] || 0;
         const breath = calculateBreath(volume);
 
         return (
