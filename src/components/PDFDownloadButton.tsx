@@ -3,6 +3,15 @@
 import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import type { jsPDF } from 'jspdf'
+import 'jspdf-autotable'
+
+// Add this to extend jsPDF type with autoTable
+declare module 'jspdf' {
+  interface jsPDF {
+    autoTable: (options: any) => jsPDF;
+  }
+}
 
 interface PDFDownloadButtonProps {
   userData: any
