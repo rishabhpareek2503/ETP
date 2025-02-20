@@ -1,5 +1,6 @@
 export interface PlantData {
-    type: "STP" | "ETP"
+    type: "ETP" | "STP"
+    industry: string
     capacity: number
     BOD: number
     COD: number

@@ -41,7 +41,7 @@ const Dashboard = () => {
 
   const [plantData, setPlantData] = useState<PlantData>({
     type: "ETP",
-    Industry: "",
+    industry: "",
     capacity: 0,
     BOD: 0,
     COD: 0,
@@ -287,16 +287,16 @@ const Dashboard = () => {
   const resetDashboard = () => {
     // Reset to initial states
     setPlantData({
-      type: 'ETP', // Add missing required type field
-      Industry: "",
+      type: 'ETP',
+      industry: "",
       capacity: 0,
-      PeakFlow: 0,
       BOD: 0,
       COD: 0,
       TSS: 0,
       pH: 0,
       OilGrease: 0,
       Nitrogen: 0,
+      PeakFlow: 0,
     });
     // Reset equipment data to clean initial state
     const cleanEquipmentData = Object.entries(equipmentData).reduce<Record<string, any>>((acc, [key, item]: [string, any]) => {
